@@ -1,16 +1,15 @@
 version: "3.9"
 services:
-  backend:
-    build: 
+  frontend:
+    build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: /FRONTEND/Dockerfile
     ports:
       - "5000:5000"
     links:
-      - frontend
       - database
     volumes:
-      - .:/home/backend
+      - .:/home/app
 
   database:
     image: mongo
@@ -21,5 +20,3 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=root
     volumes:
       - mongo-data:/data/db
-  frontend:
-    build: .

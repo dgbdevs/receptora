@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /react-vite-app
+WORKDIR /event-server
 
 EXPOSE 3000
 
